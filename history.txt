@@ -1,0 +1,366 @@
+    1  cp -a /etc/ssh/sshd_config /etc/ssh/sshd_config_orig_copy;
+    2  sed -i 's/#PermitRootLogin yes/PermitRootLogin yes/' /etc/ssh/sshd_config;
+    3  sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config;
+    4  systemctl restart sshd;
+    5  vim /etc/ssh/sshd_config
+    6  systemctl restart sshd;
+    7  passwd
+    8  yum update -y
+    9  ipaddr
+   10  ip addr
+   11  exit
+   12  ll
+   13  kubectl
+   14  minikube
+   15  uname
+   16  whoami
+   17  uname -a
+   18  ls
+   19  ll
+   20  apt
+   21  yum install htop
+   22  htop
+   23  yum install htop
+   24  htop
+   25  pwd
+   26  yum install -y yum-utils device-mapper-persistent-data lvm2
+   27  lvm
+   28  yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+   29  yum install docker-ce -y
+   30  docker
+   31  kubectl
+   32  mkdir -p /etc/systemd/system/docker.service.d
+   33  nano /etc/systemd/system/docker.service.d/http-proxy.conf
+   34  cat /etc/systemd/system/docker.service.d/http-proxy.conf
+   35  systemctl daemon-reload
+   36  systemctl restart docker
+   37  systemctl show --property=Environment docker
+   38  nano .bash_profile 
+   39  cat  .bash_profile 
+   40  exit
+   41  ls
+   42  ll
+   43  pwd
+   44  cd /
+   45  ls
+   46  cd /home
+   47  ls
+   48  cd
+   49  pwd
+   50  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+   51  curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+   52  minikube start --vm-driver=none
+   53  iptables -A DOCKER -j ACCEPT
+   54  verify: iptables -L DOCKER
+   55  iptables -L DOCKER
+   56  echo "iptables -A DOCKER -j ACCEPT" > /etc/profile.d/iptables.sh && chmod +x /etc/profile.d/iptables.sh
+   57  kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
+   58  kubectl expose deployment hello-minikube --type=NodePort
+   59  minikube service hello-minikube --url
+   60  curl http://127.0.0.1:31265
+   61  curl http://127.0.0.1:32344
+   62  kubectl get pods
+   63  ls
+   64  pwd
+   65  mkdir neve
+   66  ls
+   67  cd neve
+   68  ls
+   69  nano Dockerfile
+   70  nano jenkins-deployment.yaml
+   71  ls
+   72  docker images ls
+   73  eval $(minikube docker-env)
+   74  minikube docker-env
+   75  cat jenkins-deployment.yaml 
+   76  nano jenkins-deployment.yaml
+   77  nano Dockerfile
+   78  docker build -t neve/jenkins-image .
+   79  docker image ls
+   80  docker container ls
+   81  docker container ls | grep jenkins
+   82  kubectl get deployments
+   83  docker images ls
+   84  docker image ls
+   85  kubectl run jenkins --image=neve/jenkins-image --port=8080
+   86  kubectl get deployments
+   87  kubectl expose deployment jenkins --type=NodePort
+   88  minikube service jenkins --url
+   89  eval $(minikube docker-env)
+   90  eval $(minikube docker-env
+   91  eval $(minikube docker-env)
+   92  kubectl get deployments
+   93  kubectl get pods
+   94  kubectl delete jenkins
+   95  kubectl delete -name jenkins
+   96  kubectl delete --name jenkins
+   97  kubectl delete pods,services -l name=jenkins
+   98  kubectl get pods
+   99  kubectl delete pods,services -l name=jenkins-58987f75b9-kt2nk
+  100  kubectl delete pods,services -l name=jenkins*
+  101  kubectl get pods
+  102  kubectl delete pod,service jenkins
+  103  kubectl delete pod,service "jenkins*"
+  104  kubectl get pods
+  105  ll
+  106  kubectl get deployments
+  107  docker image ls
+  108  ssh minikube-kapica
+  109  ssh minikube
+  110  kubectl run discovery
+  111  kubectl run discovery –image=neve/jenkins-image –port=8080
+  112  minikube ssh
+  113  docker image ls
+  114  kubectl run jenkins --image=neve/jenkins-image --image-pull-policy=Never
+  115  kubectl get deployments
+  116  kubectl get pods
+  117  ll
+  118  minikube service jenkins --url
+  119  minikube service jenkins
+  120  kubectl run jenkins --image=neve/jenkins-image --port=8080 --image-pull-policy=Never
+  121  kubectl get deployments
+  122  kubectl expose deployment jenkins --type=NodePort
+  123  minikube service jenkins --url
+  124  htop
+  125  ps
+  126  ps aux
+  127  ps aux | grep jenkins
+  128  kubectl get pods
+  129  history
+  130  ls
+  131  cat jenkins-deployment.yaml 
+  132  ll
+  133  kubectl apply -f jenkins-deployment.yaml --image-pull-policy=Never
+  134  kubeadm default policy imagePullPolicy=Never
+  135  kubeadm
+  136  kubeadm config
+  137  kubeadm config --image-pull-policy=Never
+  138  kubectl get deploy
+  139  kubectl run -f jenkins-deployment.yaml --image-pull-policy=Never
+  140  ll
+  141  nano jenkins-deployment.yaml 
+  142  kubectl apply -f jenkins-deployment.yaml
+  143  nano jenkins-deployment.yaml 
+  144  kubectl apply -f jenkins-deployment.yaml
+  145  nano jenkins-deployment.yaml 
+  146  kubectl apply -f jenkins-deployment.yaml
+  147  nano jenkins-deployment.yaml 
+  148  ls
+  149  rm jenkins-deployment.yaml 
+  150  nano jenkins-deployment.yaml
+  151  kubectl apply -f jenkins-deployment.yaml
+  152  nano jenkins-deployment.yaml
+  153  kubectl apply -f jenkins-deployment.yaml
+  154  kubectl get deploy
+  155  kubectl get pods
+  156  kubectl expose deployment hello-minikube --type=NodePort
+  157  minikube service jenkins --url
+  158  kubectl get pods
+  159  kubectl get deploy
+  160  kubectl get service
+  161  minikube service jenkins --url
+  162  minikube service jenkins 
+  163  kubectl describe pod | grep jenkins
+  164  ll
+  165  nano jenkins-service.yaml
+  166  kubectl create -f jenkins-service.yaml
+  167  ls
+  168  kubectl create -f jenkins-service.yaml
+  169  minikube service jenkins --url
+  170  ll
+  171  screen 
+  172  htop
+  173  kubectl get pods
+  174  screenfetch
+  175  yum install screenfetch
+  176  ll
+  177  git clone https://github.com/KittyKatt/screenFetch.git
+  178  cd screenFetch
+  179  chmod +x screenfetch-dev
+  180  ./screenfetch-dev
+  181  screenfetch
+  182  ./screenfetch-dev
+  183  ls
+  184  ./screenfetch-dev 
+  185  kubectl get service
+  186  minikube ip
+  187  ./screenfetch-dev 
+  188  jdk
+  189  java
+  190  java --version
+  191  java -v
+  192  java -version
+  193  cd screenFetch/
+  194  ./screenfetch-dev 
+  195  docker images ls
+  196  docker image ls
+  197  kubectl get deploy
+  198  ls
+  199  cd neve/
+  200  ll
+  201  ls
+  202  nano jenkins-deployment.yaml 
+  203  kubectl apply -f jenkins-deployment.yaml
+  204  kubectl create -f jenkins-service.yaml
+  205  rm jenkins-deployment.yaml 
+  206  nano jenkins-deployment.yaml
+  207  kubectl apply -f jenkins-deployment.yaml
+  208    kubectl create -f jenkins-service.yaml
+  209  kubectl cluster-info | grep master
+  210  kubectl cluster-info 
+  211  kubectl get pods | grep jenkins
+  212  kubectl describe pod jenkins-77d64c47d6-6plxn
+  213  ifconfig
+  214  kubectl cluster-info
+  215  cat ~/.kube/config
+  216  cat /root/.minikube/ca.crt
+  217  cat ~/.kube/config
+  218  cat ~/.kube/config | grep certificate-authority-data
+  219  cat ~/.kube/config | grep certificate
+  220  cat ~/.kube/config
+  221  openssl pkcs12 -export -out cert.pfx -inkey client.key -in client.crt -certfile ca.crt
+  222  openssl pkcs12 -export -out cert.pfx -inkey /root/.minikube/client.key -in /root/.minikube/client.crt -certfile /root/.minikube/ca.crt
+  223  ls
+  224  rm cert.pfx 
+  225  ll
+  226  openssl pkcs12 -export -out cert.pfx -inkey /root/.minikube/client.key -in /root/.minikube/client.crt -certfile /root/.minikube/ca.crt
+  227  ls
+  228  cat cert.pfx 
+  229  ls
+  230  ll
+  231  l
+  232  htop
+  233  stress
+  234  yum install stress
+  235  stress
+  236  df -h
+  237  htop
+  238  watch
+  239  htop
+  240  ls
+  241  nano indexer.hpa.yaml
+  242  ll
+  243  ls
+  244  cat indexer.hpa.yaml 
+  245  kubectl apply -f indexer.hpa.yaml
+  246  kubectl get hpa
+  247    watch -n1 kubectl get hpa
+  248  ll
+  249  watch -n1 kubectl get hpa
+  250  kubectl get hpa
+  251  ll
+  252  watch -n1 kubectl get hpa
+  253  kubectl get pods
+  254  watch -n1 kubectl get hpa
+  255  htop
+  256  kubectl get pods
+  257  ll
+  258  ifconfig
+  259  kubectl get hpa
+  260  ll
+  261  cd neve/
+  262  ls
+  263  cat indexer.hpa.yaml 
+  264  watch kubectl hpa
+  265  kubectl get pods
+  266  ps -a
+  267  ps -e
+  268  clear
+  269  kubectl get pods
+  270  watch kubectl hpa
+  271  kubectl get hpa
+  272  ll
+  273  kubectl get hpa
+  274  watch -n1 kubectl get hpa
+  275  kubectl describe hpa
+  276  ls
+  277  cd neve
+  278  ls
+  279  locate indexer.dep
+  280  kubectl apply -f indexer.hpa.yaml
+  281  kubectl describe hpa
+  282  kubectl get hpa
+  283  ls
+  284  cd ..
+  285  ls
+  286  cd screenFetch/
+  287  ls
+  288  cd ..
+  289  ls
+  290  cd neve
+  291  ls
+  292  kubectl describe hpa
+  293  cat indexer.hpa.yaml 
+  294  ls
+  295  kubectl describe hpa
+  296  kubectl kubectl delete -f indexer.hpa.yaml
+  297  kubectl delete -f indexer.hpa.yaml
+  298  kubectl apply -f indexer.hpa.yaml
+  299  kubectl describe hpa
+  300  kubectl show hpa
+  301  kubectl get hpa
+  302  watch -n1 kubectl get hpa
+  303  kubectl get 
+  304  kubectl get pods
+  305  ubectl cluster-info | grep master
+  306  kubectl cluster-info | grep master
+  307  kubectl get pods
+  308  kubectl get services
+  309  kubernetes-jenkins-infrastructure kubectl get pods | grep jenkins 
+  310  kubectl get pods | grep jenkins 
+  311  htop
+  312  help htop
+  313  htop help
+  314  htop --help
+  315  htop
+  316  watch -n1 kubectl get hpa
+  317  cat indexer.hpa.yaml 
+  318  locate indexer.hpa.yaml
+  319  cd neve
+  320  ls
+  321  cat indexer.hpa.yaml 
+  322  nano indexer.hpa.yaml
+  323  kubectl apply -f indexer.hpa.yaml
+  324  watch -n1 kubectl get hpa
+  325  htop
+  326  watch kubectl get  hpa
+  327  kubectl get pods
+  328  watch kubectl get  hpa
+  329  ls
+  330  cd neve
+  331  ls
+  332  kubernetes-jenkins-infrastructure kubectl get pods | grep jenkins 
+  333  kubectl get pods | grep jenkins 
+  334  watch kubectl get  hpa
+  335  kubernetes-jenkins-infrastructure kubectl get pods | grep jenkins 
+  336  kubectl get pods | grep jenkins 
+  337  watch kubectl get  hpa
+  338  kubectl get pods | grep jenkins 
+  339  watch kubectl get  hpa
+  340  kubectl get pods
+  341  watch kubectl get  hpa
+  342  kubectl get deployment
+  343  kubectl get pods
+  344  ll
+  345  cd neve/
+  346  ls
+  347  kubectl conf
+  348  ll
+  349  kubectl get hpa
+  350  ls
+  351  ll ..
+  352  ls
+  353  git init 
+  354  ls
+  355  git status
+  356  git add -A
+  357  ls
+  358  git config -all
+  359  git config --global
+  360  git config --global -list
+  361  git config 
+  362  git config --global
+  363  git config --get
+  364  git config -l
+  365  ll
+  366  history > history.txt
